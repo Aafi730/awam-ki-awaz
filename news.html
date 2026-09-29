@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Awam Ki Awaaz | News</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .dynamic-news-section {
+            margin-top: 35px;
+        }
+
+        .dynamic-news-title {
+            color: #0d47a1;
+            margin-bottom: 20px;
+        }
+
+        .admin-news-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        }
+
+        .admin-news-card h3 {
+            color: #0d47a1;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .admin-news-category {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #0d47a1;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .admin-news-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 12px 0;
+        }
+
+        .admin-news-card p {
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .admin-read-more {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 9px 16px;
+            background: #0d47a1;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .admin-read-more:hover {
+            background: #1976d2;
+        }
+
+        .no-news {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+
+        <a href="index.html" class="logo">
+            Awam <span>Ki Awaaz</span>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="news.html">News</a>
+            <a href="politics.html">Politics</a>
+            <a href="technology.html">Technology</a>
+            <a href="government.html">Government</a>
+            <a href="parliament.html">Parliament</a>
+            <a href="election.html">Election</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<div class="breaking-news">
+
+    <div class="breaking-inner">
+
+        <span class="breaking-title">
+            BREAKING NEWS
+        </span>
+
+        <div class="breaking-text">
+            Latest news and important updates from Pakistan
+        </div>
+
+    </div>
+
+</div>
+
+
+<section class="page-header">
+
+    <h1>Latest News</h1>
+
+    <p>
+        Pakistan aur duniya ki aham khabrein
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- ADMIN SAVED NEWS -->
+
+    <section class="dynamic-news-section">
+
+        <div class="section-title">
+
+            <div>
+
+                <span></span>
+
+                <h2 class="dynamic-news-title">
+                    Latest Updates
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div id="adminNewsList"></div>
+
+    </section>
+
+
+
+    <!-- STATIC NEWS -->
+
+    <div class="section-title">
+
+        <div>
+
+            <span></span>
+
+            <h2>Pakistan News</h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="news-grid">
+
+
+        <article class="card">
+
+            <div class="card-image">
+                National News
+            </div>
+
+            <div class="card-content">
+
+                <span class="card-category">
+                    Pakistan
+                </span>
+
+                <h3>
+                    Important National Developments
+                </h3>
+
+                <p>
+                    Pakistan mein hone wali important national
+                    developments aur public affairs ki updates.
+                </p>
+
+                <a href="index.html" class="read-more-btn">
+                    Read More
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="card">
+
+            <div class="card-image">
+                Current Affairs
+            </div>
+
+            <div class="card-content">
+
+                <span class="card-category">
+                    Current Affairs
+                </span>
+
+                <h3>
+                    Latest Current Affairs
+                </h3>
+
+                <p>
+                    Mulki surat-e-haal aur aham current affairs
+                    ke bare mein latest information.
+                </p>
+
+                <a href="index.html" class="read-more-btn">
+                    Read More
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="card">
+
+            <div class="card-image">
+                Public Updates
+            </div>
+
+            <div class="card-content">
+
+                <span class="card-category">
+                    Public
+                </span>
+
+                <h3>
+                    Updates That Matter
+                </h3>
+
+                <p>
+                    Awam se related important issues aur
+                    public-interest updates.
+                </p>
+
+                <a href="index.html" class="read-more-btn">
+                    Read More
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="card">
+
+            <div class="card-image">
+                World News
+            </div>
+
+            <div class="card-content">
+
+                <span class="card-category">
+                    World
+                </span>
+
+                <h3>
+                    International News
+                </h3>
+
+                <p>
+                    Pakistan ke ilawa duniya bhar ki important
+                    international developments.
+                </p>
+
+                <a href="index.html" class="read-more-btn">
+                    Read More
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="card">
+
+            <div class="card-image">
+                Business
+            </div>
+
+            <div class="card-content">
+
+                <span class="card-category">
+                    Business
+                </span>
+
+                <h3>
+                    Business & Economy
+                </h3>
+
+                <p>
+                    Business, economy aur financial matters se
+                    related important updates.
+                </p>
+
+                <a href="index.html" class="read-more-btn">
+                    Read More
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="card">
+
+            <div class="card-image">
+                Technology
+            </div>
+
+            <div class="card-content">
+
+                <span class="card-category">
+                    Technology
+                </span>
+
+                <h3>
+                    Technology & Digital World
+                </h3>
+
+                <p>
+                    Technology aur digital world ki interesting
+                    aur important news.
+                </p>
+
+                <a href="technology.html" class="read-more-btn">
+                    Read More
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+
+    <a href="index.html" class="back-home">
+        ← Back to Home
+    </a>
+
+
+</main>
+
+
+
+<footer>
+
+    <div class="footer-inner">
+
+
+        <div>
+
+            <h3>
+                Awam Ki Awaaz
+            </h3>
+
+            <p>
+                A simple and professional news platform covering
+                Pakistan, politics, technology and public affairs.
+            </p>
+
+        </div>
+
+
+
+        <div>
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="news.html">
+                    News
+                </a>
+
+                <a href="politics.html">
+                    Politics
+                </a>
+
+                <a href="technology.html">
+                    Technology
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div>
+
+            <h3>
+                More
+            </h3>
+
+            <div class="footer-links">
+
+                <a href="government.html">
+                    Government
+                </a>
+
+                <a href="parliament.html">
+                    Parliament
+                </a>
+
+                <a href="election.html">
+                    Election
+                </a>
+
+                <a href="about.html">
+                    About Us
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="terms.html">
+                    Terms & Privacy
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="copyright">
+
+        © 2026 Awam Ki Awaaz. All Rights Reserved.
+
+    </div>
+
+
+</footer>
+
+
+
+<script>
+
+    /* =====================================
+       LOAD ADMIN SAVED NEWS
+    ===================================== */
+
+    const adminNewsList =
+        document.getElementById("adminNewsList");
+
+
+    /* 
+       New storage key:
+       awamNews
+
+       Old storage key is also checked
+       so existing news is not lost.
+    */
+
+    let news =
+        JSON.parse(localStorage.getItem("awamNews")) || [];
+
+
+    if (news.length === 0) {
+
+        news =
+            JSON.parse(
+                localStorage.getItem("awamKiAwazNews")
+            ) || [];
+
+    }
+
+
+    /* =====================================
+       DISPLAY NEWS
+    ===================================== */
+
+    function displayAdminNews() {
+
+        adminNewsList.innerHTML = "";
+
+
+        if (news.length === 0) {
+
+            adminNewsList.innerHTML = `
+                <div class="no-news">
+                    No latest news available yet.
+                </div>
+            `;
+
+            return;
+        }
+
+
+        news
+            .slice()
+            .reverse()
+            .forEach(function(item) {
+
+
+                const newsCard =
+                    document.createElement("article");
+
+
+                newsCard.className =
+                    "admin-news-card";
+
+
+                const category =
+                    item.category || "News";
+
+
+                const title =
+                    item.title || "Untitled News";
+
+
+                const description =
+                    item.description || "";
+
+
+                let imageHTML = "";
+
+
+                if (item.image) {
+
+                    imageHTML = `
+                        <img
+                            src="${item.image}"
+                            class="admin-news-image"
+                            alt="News Image"
+                        >
+                    `;
+
+                }
+
+
+                let readMoreLink =
+                    "news.html";
+
+
+                if (item.url && item.url.trim() !== "") {
+
+                    readMoreLink =
+                        item.url;
+
+                }
+
+
+                newsCard.innerHTML = `
+
+                    <span class="admin-news-category">
+                        ${category}
+                    </span>
+
+                    <h3>
+                        ${title}
+                    </h3>
+
+                    ${imageHTML}
+
+                    <p>
+                        ${description}
+                    </p>
+
+                    <a
+                        href="${readMoreLink}"
+                        class="admin-read-more"
+                        ${item.url ? 'target="_blank" rel="noopener noreferrer"' : ""}
+                    >
+                        Read More
+                    </a>
+
+                `;
+
+
+                adminNewsList.appendChild(newsCard);
+
+            });
+
+    }
+
+
+    /* =====================================
+       START
+    ===================================== */
+
+    displayAdminNews();
+
+</script>
+
+</body>
+</html>

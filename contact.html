@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Awam Ki Awaaz | Contact</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .contact-box {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        }
+
+        .contact-box h2 {
+            color: #0d47a1;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            background: #0d47a1;
+            color: white;
+            border: none;
+            padding: 13px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background: #1976d2;
+        }
+
+        .form-message {
+            display: none;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-inner">
+
+        <a href="index.html" class="logo">
+            Awam <span>Ki Awaaz</span>
+        </a>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="news.html">News</a>
+
+            <a href="politics.html">Politics</a>
+
+            <a href="technology.html">Technology</a>
+
+            <a href="government.html">Government</a>
+
+            <a href="parliament.html">Parliament</a>
+
+            <a href="election.html">Election</a>
+
+            <a href="about.html">About</a>
+
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<div class="breaking-news">
+
+    <div class="breaking-inner">
+
+        <span class="breaking-title">
+            CONTACT
+        </span>
+
+        <div class="breaking-text">
+            Awam Ki Awaaz se rabta karein
+        </div>
+
+    </div>
+
+</div>
+
+
+<section class="page-header">
+
+    <h1>
+        Contact Us
+    </h1>
+
+    <p>
+        Hum se rabta karne ke liye neeche di gayi information dekhein
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- GET IN TOUCH -->
+
+    <div class="contact-box">
+
+        <h2>
+            Get In Touch
+        </h2>
+
+        <p>
+            Agar aap Awam Ki Awaaz ke hawale se koi sawal,
+            suggestion ya feedback dena chahte hain to hum se
+            rabta kar sakte hain.
+        </p>
+
+
+        <div class="contact-info">
+
+            <p>
+                <strong>Email:</strong>
+                awamkiawaz@example.com
+            </p>
+
+            <p>
+                <strong>Phone:</strong>
+                +92 300 1234567
+            </p>
+
+            <p>
+                <strong>Address:</strong>
+                Pakistan
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CONTACT FORM -->
+
+    <div class="contact-box">
+
+        <h2>
+            Send Us a Message
+        </h2>
+
+        <form
+            class="contact-form"
+            id="contactForm"
+        >
+
+            <input
+                type="text"
+                id="contactName"
+                placeholder="Your Name"
+                required
+            >
+
+
+            <input
+                type="email"
+                id="contactEmail"
+                placeholder="Your Email"
+                required
+            >
+
+
+            <textarea
+                id="contactMessage"
+                placeholder="Write your message here..."
+                required
+            ></textarea>
+
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+
+        <div
+            class="form-message"
+            id="formMessage"
+        >
+            Thank you! Your message has been received.
+        </div>
+
+    </div>
+
+
+
+    <!-- BACK HOME -->
+
+    <a href="index.html" class="back-home">
+        ← Back to Home
+    </a>
+
+
+</main>
+
+
+<footer>
+
+    <div class="footer-inner">
+
+
+        <div>
+
+            <h3>
+                Awam Ki Awaaz
+            </h3>
+
+            <p>
+                A professional news platform covering Pakistan,
+                politics, technology and public affairs.
+            </p>
+
+        </div>
+
+
+
+        <div>
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="news.html">
+                    News
+                </a>
+
+                <a href="politics.html">
+                    Politics
+                </a>
+
+                <a href="technology.html">
+                    Technology
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div>
+
+            <h3>
+                More
+            </h3>
+
+            <div class="footer-links">
+
+                <a href="government.html">
+                    Government
+                </a>
+
+                <a href="parliament.html">
+                    Parliament
+                </a>
+
+                <a href="election.html">
+                    Election
+                </a>
+
+                <a href="about.html">
+                    About Us
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="terms.html">
+                    Terms & Privacy
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Awam Ki Awaaz. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+    const contactForm =
+        document.getElementById("contactForm");
+
+    const formMessage =
+        document.getElementById("formMessage");
+
+
+    contactForm.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            formMessage.style.display = "block";
+
+
+            contactForm.reset();
+
+        }
+    );
+
+</script>
+
+
+</body>
+</html>

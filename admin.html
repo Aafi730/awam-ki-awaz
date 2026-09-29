@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login - Awam Ki Awaz</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0d47a1, #1976d2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 420px;
+            background: #ffffff;
+            padding: 35px 30px;
+            border-radius: 18px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .logo h1 {
+            color: #0d47a1;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .logo p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .login-title {
+            text-align: center;
+            color: #222;
+            margin-bottom: 25px;
+            font-size: 22px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #ccc;
+            border-radius: 9px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-color: #1976d2;
+            box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.12);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 9px;
+            background: #0d47a1;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .login-btn:hover {
+            background: #083b8a;
+        }
+
+        .message {
+            display: none;
+            text-align: center;
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .success {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .error {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .back-home {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #1976d2;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .back-home:hover {
+            text-decoration: underline;
+        }
+
+        .security-note {
+            text-align: center;
+            margin-top: 22px;
+            font-size: 12px;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 22px;
+            }
+
+            .logo h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="logo">
+            <h1>Awam Ki Awaz</h1>
+            <p>News & Information Platform</p>
+        </div>
+
+        <h2 class="login-title">Admin Login</h2>
+
+        <form id="adminLoginForm">
+
+            <div class="form-group">
+                <label for="username">Admin Username</label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter admin username"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter admin password"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="login-btn">
+                Login to Admin Panel
+            </button>
+
+        </form>
+
+        <div id="message" class="message"></div>
+
+        <a href="index.html" class="back-home">
+            ← Back to Home
+        </a>
+
+        <p class="security-note">
+            Admin access is restricted to authorized users only.
+        </p>
+
+    </div>
+
+    <script>
+
+        document.getElementById("adminLoginForm").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value;
+
+            const savedUsername = localStorage.getItem("awamAdminUsername");
+            const savedPassword = localStorage.getItem("awamAdminPassword");
+
+            const message = document.getElementById("message");
+
+            if (!savedUsername || !savedPassword) {
+
+                message.style.display = "block";
+                message.className = "message error";
+                message.textContent =
+                    "Please set Admin Username and Password from Admin Settings first.";
+
+                return;
+            }
+
+            if (username === savedUsername && password === savedPassword) {
+
+                sessionStorage.setItem("awamAdminLoggedIn", "true");
+
+                message.style.display = "block";
+                message.className = "message success";
+                message.textContent = "Login successful! Opening Admin Dashboard...";
+
+                setTimeout(function() {
+                    window.location.href = "admin-dashboard.html";
+                }, 700);
+
+            } else {
+
+                message.style.display = "block";
+                message.className = "message error";
+                message.textContent = "Incorrect username or password.";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

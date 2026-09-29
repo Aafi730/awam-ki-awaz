@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Settings - Awam Ki Awaz</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f7fc;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0d47a1, #1976d2);
+            color: white;
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        header p {
+            margin: 8px 0 0;
+            font-size: 17px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .settings-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .settings-card h2 {
+            margin-top: 0;
+            text-align: center;
+            color: #0d47a1;
+        }
+
+        .settings-card p {
+            text-align: center;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #1976d2;
+        }
+
+        .save-btn {
+            display: block;
+            width: 100%;
+            margin-top: 25px;
+            padding: 13px;
+            border: none;
+            border-radius: 9px;
+            background: #0d47a1;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .save-btn:hover {
+            background: #1976d2;
+        }
+
+        .back-btn {
+            display: block;
+            width: fit-content;
+            margin: 20px auto 0;
+            padding: 11px 22px;
+            background: #555;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .message {
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            background: #0d47a1;
+            color: white;
+            padding: 25px;
+            margin-top: 45px;
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .settings-card {
+                padding: 22px;
+            }
+
+            header h1 {
+                font-size: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Awam Ki Awaz</h1>
+
+    <p>Admin Settings</p>
+
+</header>
+
+
+<div class="container">
+
+    <div class="settings-card">
+
+        <h2>⚙️ Admin Settings</h2>
+
+        <p>
+            Update your admin username and password.
+        </p>
+
+
+        <div class="form-group">
+
+            <label for="adminUsername">
+                Admin Username
+            </label>
+
+            <input
+                type="text"
+                id="adminUsername"
+                placeholder="Enter admin username"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="adminPassword">
+                Admin Password
+            </label>
+
+            <input
+                type="password"
+                id="adminPassword"
+                placeholder="Enter admin password"
+            >
+
+        </div>
+
+
+        <button
+            class="save-btn"
+            onclick="saveSettings()"
+        >
+            Save Settings
+        </button>
+
+
+        <div
+            class="message"
+            id="message"
+        ></div>
+
+
+        <a
+            href="admin-dashboard.html"
+            class="back-btn"
+        >
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    © 2026 Awam Ki Awaz. All Rights Reserved.
+
+</footer>
+
+
+<script>
+
+    /* ==============================
+       ADMIN LOGIN PROTECTION
+    ============================== */
+
+    if (
+        sessionStorage.getItem("awamAdminLoggedIn")
+        !== "true"
+    ) {
+
+        window.location.href = "admin.html";
+
+    }
+
+
+    /* ==============================
+       SAVE SETTINGS
+    ============================== */
+
+    function saveSettings() {
+
+        const username =
+            document
+            .getElementById("adminUsername")
+            .value
+            .trim();
+
+
+        const password =
+            document
+            .getElementById("adminPassword")
+            .value
+            .trim();
+
+
+        const message =
+            document.getElementById("message");
+
+
+        if (
+            username === "" ||
+            password === ""
+        ) {
+
+            message.style.color = "#d32f2f";
+
+            message.innerText =
+                "Please enter username and password.";
+
+            return;
+
+        }
+
+
+        localStorage.setItem(
+            "awamAdminUsername",
+            username
+        );
+
+
+        localStorage.setItem(
+            "awamAdminPassword",
+            password
+        );
+
+
+        message.style.color = "#2e7d32";
+
+        message.innerText =
+            "Admin settings saved successfully.";
+
+    }
+
+
+    /* ==============================
+       LOAD SAVED SETTINGS
+    ============================== */
+
+    window.onload = function() {
+
+        const savedUsername =
+            localStorage.getItem(
+                "awamAdminUsername"
+            ) || "";
+
+
+        const savedPassword =
+            localStorage.getItem(
+                "awamAdminPassword"
+            ) || "";
+
+
+        document
+        .getElementById("adminUsername")
+        .value =
+            savedUsername;
+
+
+        document
+        .getElementById("adminPassword")
+        .value =
+            savedPassword;
+
+    };
+
+</script>
+
+</body>
+
+</html>
